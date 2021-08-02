@@ -27,11 +27,10 @@ refs.galleryList.insertAdjacentHTML("afterbegin", markUp.join(""))
 refs.galleryList.addEventListener("click", openModal)
 refs.modal.addEventListener("click", closeModal)
 window.addEventListener("keydown", openByEnter)
-
 function openModal(event) {
     event.preventDefault()
     // if(event.target.nodeName !== "IMG"){
-        if(event.target.classList.contains("gallery__image" || "gallery__link")){
+        if(!event.target.classList.contains("gallery__image") && !event.target.classList.contains("gallery__link")){
         return;
     }
 
